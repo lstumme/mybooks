@@ -1,0 +1,29 @@
+<%- include('includes/head.ejs') %>
+<div class="container-fluid">
+    <div class="row justify-content-center align-items-center" style="height: 95vh">
+        <div class="col-lg-4 col-md-5 col-sm-6">
+            <div class="text-center text-secondary">
+                <h2>Recherche</h2>
+                <p>Paramètres de recherche</p>
+            </div>
+            <form class="text-muted">
+                <div class="form-group">
+                    <label for="title">Titre</label>
+                    <input type="text" class="form-control" id="title">
+                </div>
+                <div class="form-group">
+                    <label for="author">Auteur</label>
+                    <input type="text" class="form-control" id="author">
+                </div>
+                <div class="form-group">
+                    <label for="isbn">ISBN</label>
+                    <input type="text" class="form-control" id="isbn">
+                </div>
+                <br>
+                <button class="btn btn-outline-secondary btn-block" type="subdmit">Rechercher</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include('includes/end.ejs') %>
