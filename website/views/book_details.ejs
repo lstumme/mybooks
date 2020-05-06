@@ -1,0 +1,33 @@
+<%- include('includes/head.ejs') %>
+<div class="col-lg-10 col-sm-10 mb-10 mx-auto">
+    <div class="card my-auto" style="height: 70vh">
+        <div class="row py-2">
+            <img src="<%= book.urlImage %>" style="max-height: 30vh" class="px-4" />
+            <div class="fluid px-2">
+                <div class="row">
+                    <h3><%= book.title %></h3>
+                </div>
+                <div class="row">
+                    <label><u>Auteurs: </u></label>
+                    <p class="px-2"><%= book.authors %></p>
+                </div>
+                <div class="row">
+                    <label><u>Editeur: </u></label>
+                    <p class="px-2"><%= book.editor %></p>
+                </div>
+                <div class="row">
+                    <label><u>ISBN: </u></label>
+                    <p class="px-2"><%= book.isbn %></p>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="fluid mx-1">
+                <label><u>Résumé: </u></label>
+                <p><%= book.description %></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('includes/end.ejs') %>

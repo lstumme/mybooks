@@ -6,18 +6,18 @@
                 <h2>Recherche</h2>
                 <p>Paramètres de recherche</p>
             </div>
-            <form class="text-muted">
+            <form class="text-muted" action="/search" method="POST">
                 <div class="form-group">
                     <label for="title">Titre</label>
-                    <input type="text" class="form-control" id="title">
+                    <input type="text" name="title" class="form-control" id="title">
                 </div>
                 <div class="form-group">
                     <label for="author">Auteur</label>
-                    <input type="text" class="form-control" id="author">
+                    <input type="text" name="author" class="form-control" id="author">
                 </div>
                 <div class="form-group">
                     <label for="isbn">ISBN</label>
-                    <input type="text" class="form-control" id="isbn">
+                    <input type="text" name="isbn" class="form-control" id="isbn">
                 </div>
                 <br>
                 <button class="btn btn-outline-secondary btn-block" type="subdmit">Rechercher</button>

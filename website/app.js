@@ -17,6 +17,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 app.use(require('./controllers/errorController').get404);
-
-app.listen(3000);
+mongoose.connect('mongodb://localhost/mybooks', {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true
+}).then(result => {
+    app.listen(3000);
+});
 

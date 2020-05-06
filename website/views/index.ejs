@@ -1,9 +1,51 @@
 <%- include('includes/head.ejs') %>
-<div class="col-lg-10 col-md-8 col-sm-6">
+<div class="col-lg-6 col-sm-10">
     <div class="text-center text-secondary">
-        <h1><u>Page en construction !</u></h1>
-        <br>
-        <p>Revenez plus tard...</p>
+        <div id="carouselExampleControls" class="carousel slide p-20" data-ride="carousel">
+            <div class="carousel-inner">
+                <% let index = 0; %>
+                <% for (let book of books) { %>
+                <div class="carousel-item <%= index === 0 ? 'active' : ''; %>">
+                    <div class="card bg-gradient-light" style="height: 50vh">
+                        <div class="row h-100">
+                            <div class="col-sm-4 my-auto">
+                                <img class="d-block w-100 p-20" src="<%= book.urlImage %>" alt="<%= book.title %>">
+                            </div>
+                            <div class="col-sm-8" pr-5>
+                                <div class="fluid" style="height: 43vh">
+                                    <h4 class="py-2 text-left"><%= book.title %></h4>
+                                    <p class="px2 text-left"><b><%= book.authors %></b></p>
+                                    <%  let description = book.description; 
+                                        if(description) {
+                                            if(description.length > 480) { 
+                                              description = description.substring(0, 475) + '...';
+                                              book.description = description;
+                                            }
+                                        } %>
+                                    <p class="text-left pr-3"><%= description %></p>
+                                </div>
+                                <div class="row h-10">
+                                    <form action="/book_details" method="GET">
+                                        <input type="hidden" name="bookId" value="<%= book._id %>" />
+                                        <button class="ml-2 bg-outline-warn">Détails</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% index = index + 1; %>
+                <% } %>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
     </div>
 </div>
 
